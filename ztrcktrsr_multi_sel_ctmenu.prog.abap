@@ -9,7 +9,7 @@ CLASS lcl_main DEFINITION.
     TYPES: BEGIN OF ty_option,
              value   TYPE char10,
              text    TYPE string,
-             checked TYPE boolean_flg,
+             checked TYPE abap_bool,
            END OF ty_option.
     DATA: mytoolbar    TYPE REF TO cl_gui_toolbar,
           menupos_x    TYPE i,
