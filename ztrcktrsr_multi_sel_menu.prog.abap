@@ -31,7 +31,7 @@ CLASS lcl_main IMPLEMENTATION.
 
     IF mytoolbar IS INITIAL.
       "Create docker on Top of the screen
-      DATA(docker) = NEW cl_gui_docking_container( side = cl_gui_docking_container=>dock_at_left extension = 130 ).
+      DATA(docker) = NEW cl_gui_docking_container( side = cl_gui_docking_container=>dock_at_left extension = 330 ).
 
 
       "create toolbar object
@@ -68,10 +68,10 @@ CLASS lcl_main IMPLEMENTATION.
 
 
     "set initial values
-    options = VALUE #( ( value = 'ONE'   text = 'Option One' )
-                       ( value = 'TWO'   text = 'Option Two' )
-                       ( value = 'THREE' text = 'Option Three' )
-                       ( value = 'FOUR'  text = 'Option Four' ) ).
+    options = VALUE #( ( value = 'ONE'   text = 'Option One aaaaaaaaaaaaaaaaaaaaaaa aaaaa' )
+                       ( value = 'TWO'   text = 'Option Two bbbbbbbbbbbbbbbbbbbbbbbbbbb h' )
+                       ( value = 'THREE' text = 'Option Three ccccccccccccccccccccccccccc' )
+                       ( value = 'FOUR'  text = 'Option Four dddddddddddddddddddddddddddd' ) ).
     "Build menu
     build_menu( ).
 
@@ -96,6 +96,12 @@ CLASS lcl_main IMPLEMENTATION.
         <option>-checked = abap_true.
       ENDIF.
     ENDIF.
+
+    if <option>-checked = abap_true.
+      loop at options ASSIGNING <option> where value <> fcode.
+        <option>-checked = abap_false.
+    endloop.
+    endif.
 
     build_menu( ).
 
