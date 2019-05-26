@@ -3,7 +3,7 @@ REPORT ZTRCKTRSR_MULTI_SEL_SALV.
 CLASS lcl_main DEFINITION.
   PUBLIC SECTION.
     TYPES: BEGIN OF ty_option,
-             mark  TYPE boolean_flg,
+             mark  TYPE abap_bool,
              icon  type icon_d,
              key   TYPE c LENGTH 10,
              text  TYPE c LENGTH 100,
